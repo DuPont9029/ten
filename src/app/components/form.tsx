@@ -30,6 +30,14 @@ export default function Form() {
             setCostoTotale(430);
             setSconto(0);
         }
+        else if (Number(numeroPersone) >= 2 && Number(numeroSettimane) < 2) {
+            console.log(`Numero di persone: ${numeroPersone}, Numero di settimane: ${numeroSettimane}`);
+            setCosto(430 * Number(numeroPersone));
+            setCostoTotale(430 * Number(numeroPersone) - (430 * Number(numeroPersone) * 0.05));
+            setSconto(430 * Number(numeroPersone) * 0.05);
+            console.log("Lo sconto in percentuale è del 5%");
+            alert("Sconto del 5% applicato");
+        }
         else if (Number(numeroPersone) >= 2 ) {
             //alert(`il costo è di ${((430 * Number(numeroPersone)) - ((430 * Number(numeroPersone)) * 0.15))}`);
             console.log(`430 * ${Number(numeroPersone)}: ` + 430 * Number(numeroPersone));
@@ -37,7 +45,7 @@ export default function Form() {
             setCosto((430 * Number(numeroPersone)));
             setCostoTotale((430 * Number(numeroPersone)) - ((430 * Number(numeroPersone)) * 0.15));
             setSconto(((430 * Number(numeroPersone)) * 0.15));
-            console.log(`il nome e cognome è: ${NomeECognome}, la città è: ${citta}, il numero di persone è: ${numeroPersone}, la mail è: ${email}, il numero di settimane è: ${numeroSettimane}, il costo è: ${costo}, lo sconto è: ${sconto}, il costo totale è: ${costoTotale}`);
+            console.log(`il nome e cognome è: ${NomeECognome}, la città è: ${citta}, il numero di persone è: ${numeroPersone}, la mail è: ${email}, il numero di settimane è: ${numeroSettimane}, il costo è: ${costo}, lo sconto è: ${sconto} (15%), il costo totale è: ${costoTotale}`);
         }
     }
 
